@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let c of collaboratorList" class="col s6 m4">
+            <div  (click)="goToCollaborator(c)" class="card horizontal" appBorderCard>
+                <div class="card-image">
+                    <img [src]="c.picture" />
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{ c.name }}</p>
+                        <p><small>{{ c.created | date }}</small></p>
+                        <p *ngFor="let type of c.types" class="{{ type | collaboratorTypeColor}}">
+                            {{ type }}
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
